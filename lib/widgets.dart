@@ -92,7 +92,7 @@ section2() {
           kListTile()
         ],
       ),
-      Container(
+      SizedBox(
         width: 50,
         height: 200,
         child: CustomPaint(

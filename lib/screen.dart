@@ -34,22 +34,7 @@ class SamplePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             kSizedBox,
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: kButtonStyle(radius: 15),
-                  child: const Text(
-                    'send',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: kBoldtext(text: "Fetch me"),
-                )
-              ],
-            ),
+            section1(),
             kSizedBox40,
             section2(),
             kSizedBox40,
@@ -57,29 +42,52 @@ class SamplePage extends StatelessWidget {
             kSizedBox40,
             section4(itemSelections),
             kSizedBox40,
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    kBoldtext(text: 'Total Price'),
-                    kHeadText(text: '\$48,80')
-                  ],
-                ),
-                kSizedBox30,
-                SizedBox(
-                  width: 400,
-                  height: 60,
-                  child: ElevatedButton(
-                      style: kButtonStyle(radius: 20),
-                      onPressed: () {},
-                      child: kBoldtext(text: 'Submit')),
-                )
-              ],
-            )
+            section5()
           ],
         ),
       ),
+    );
+  }
+
+  Column section5() {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            kBoldtext(text: 'Total Price'),
+            kHeadText(text: '\$48,80')
+          ],
+        ),
+        kSizedBox30,
+        SizedBox(
+          width: 400,
+          height: 60,
+          child: ElevatedButton(
+              style: kButtonStyle(radius: 20),
+              onPressed: () {},
+              child: kBoldtext(text: 'Submit')),
+        )
+      ],
+    );
+  }
+
+  Row section1() {
+    return Row(
+      children: [
+        ElevatedButton(
+          onPressed: () {},
+          style: kButtonStyle(radius: 15),
+          child: const Text(
+            'send',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: kBoldtext(text: "Fetch me"),
+        )
+      ],
     );
   }
 
